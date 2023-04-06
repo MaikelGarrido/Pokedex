@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_pokemon">Buscando Pokemon…</string>
+    <string name="tracking_notification_channel_id">walk_tracking</string>
+    <string name="tracking_notification_channel_name">Walk tracking</string>
+    <string name="location_image_hint">Location image</string>
+</resources>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.fragment.details.PokemonDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:background="@color/colorPrimary"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CardView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:elevation="1dp"
+            android:src="@drawable/pokeball"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="@+id/rvType"
+            app:layout_constraintStart_toStartOf="@+id/rvType"
+            app:layout_constraintTop_toBottomOf="@+id/rvType" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/pokeball" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:elevation="1dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="@+id/rvType"
+            app:layout_constraintStart_toStartOf="@+id/rvType"
+            app:layout_constraintTop_toBottomOf="@+id/rvType" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/axiforma_medium"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Pikachu"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvType"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:elevation="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:listitem="@layout/item_types" />
+
+        <TextView
+            android:id="@+id/basic_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/axiforma_medium"
+            android:text="Información básica"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/header"
+            app:layout_constraintStart_toStartOf="@+id/header"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="21sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/axiforma_medium"
+            app:layout_constraintEnd_toStartOf="@id/height"
+            app:layout_constraintStart_toStartOf="@+id/basic_information"
+            app:layout_constraintTop_toBottomOf="@+id/basic_information"
+            tools:text="24.0 KG" />
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="21sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/axiforma_medium"
+            app:layout_constraintEnd_toEndOf="@+id/basic_information"
+            app:layout_constraintStart_toEndOf="@id/weight"
+            app:layout_constraintTop_toBottomOf="@+id/basic_information"
+            tools:text="11 M" />
+
+        <TextView
+            android:id="@+id/weight_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Peso"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/axiforma_medium"
+            app:layout_constraintEnd_toEndOf="@+id/weight"
+            app:layout_constraintStart_toStartOf="@+id/weight"
+            app:layout_constraintTop_toBottomOf="@id/weight" />
+
+        <TextView
+            android:id="@+id/height_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altura"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/axiforma_medium"
+            app:layout_constraintEnd_toEndOf="@+id/height"
+            app:layout_constraintStart_toStartOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@id/height" />
+
+        <TextView
+            android:id="@+id/base_stats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/axiforma_medium"
+            android:text="Estadísticas básicas"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/basic_information"
+            app:layout_constraintStart_toStartOf="@+id/basic_information"
+            app:layout_constraintTop_toBottomOf="@+id/weight_title" />
+
+        <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+            android:id="@+id/aa_chart_view"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/base_stats"
+            app:layout_constraintStart_toStartOf="@+id/base_stats"
+            app:layout_constraintTop_toBottomOf="@id/base_stats"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+

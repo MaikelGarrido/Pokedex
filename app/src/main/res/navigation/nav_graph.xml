@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.pokedex.ui.fragment.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pokedex.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_pokemonDetailsFragment"
+            app:destination="@id/pokemonDetailsFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonDetailsFragment"
+        android:name="com.example.pokedex.ui.fragment.details.PokemonDetailsFragment"
+        android:label="fragment_pokemon_details"
+        tools:layout="@layout/fragment_pokemon_details" >
+
+        <argument
+            android:name="pokemon"
+            app:argType="com.example.pokedex.data.model.response.Pokemon" />
+
+        <action
+            android:id="@+id/action_pokemonDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+
+    </fragment>
+</navigation>
